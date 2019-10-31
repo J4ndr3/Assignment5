@@ -9,7 +9,7 @@
       <input type="text" formControlName="name" appValidInput>
       <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
         <div *ngIf="messageForm.controls.name.errors.required">An ID is required</div>
-        <div *ngIf="messageForm.controls.name.errors">Incorrect length</div>
+        <div *ngIf="messageForm.controls.name.errors.appValidInput">Incorrect length</div>
       </div>
     </label>
   
@@ -26,7 +26,7 @@
   
   </form>
 
-  <div *ngIf="submitted" class="results">
+  <div *ngIf="success" class="results">
     <strong>ID:</strong> 
     <span>{{ messageForm.controls.name.value }}</span>
 

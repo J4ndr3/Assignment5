@@ -12,6 +12,7 @@ export class ValidInputDirective implements Validator{
     public validate(control:AbstractControl):{[key: string]: any}{
       let len = /^[a-zA-Z,0-9]{7,10}$/ ;
       let valid = len.test(control.value);
+      // console.log(control.errors);
       return control.value < 1 || valid ? null :{'appValidInput':true};
     }
 
